@@ -7,7 +7,12 @@ from scipy.stats import zscore
 
 
 # CONSTANTS
-OUTLIERS_TO_REMOVE = {"LotFrontage": 200, "LotArea": 100000, "GrLivArea": 1234}
+OUTLIERS_TO_REMOVE = {
+    "LotFrontage": 200,
+    "LotArea": 100000,
+    "GrLivArea": 4500,
+    "MasVnrArea": 1500,
+}
 
 
 # HELPING FUNCTIONS
@@ -47,11 +52,25 @@ def calculate_NaN(df: pd.DataFrame, as_percentage: bool = False):
     return NaN_df, features_with_missing
 
 
+# USE THIS FUNCTION FOR "Electrical" feature
+def fill_with_mode(df: pd.DataFrame, feature: str) -> pd.DataFrame:
+    df[feature] = df[feature].mode()[0]
+    return df
+
+
+# USE THIS FUNCTION FOR ALL CATEGORICAL FEATURES EXCEPT FROM "Electrical"
 def fill_with_NaNstring(df: pd.DataFrame, features: list[str]) -> pd.DataFrame:
     df[features] = df[features].fillna("NaN")
     return df
 
 
+# USE THIS FUNCTION FOR 'MasVnrType' and 'GarageYrBlt'
+def fill_with(df: pd.DataFrame, feature: str, fill_with=0):
+    df[feature] = df[feature].fillna(fill_with)
+    return df
+
+
+# Function to drop features with a very high missing percentage
 def drop_features_with_high_missing(df: pd.DataFrame, limit: float) -> pd.DataFrame:
     _, features_missing = calculate_NaN(df, as_percentage=True)
     for feature in features_missing.index:
@@ -61,6 +80,7 @@ def drop_features_with_high_missing(df: pd.DataFrame, limit: float) -> pd.DataFr
     return df
 
 
+# REMOVE OUTLIERS
 # Outliers for numerical features is explored in dataset_overview.ipynb.
 # The outliers can be removed based on what we see in the plots (with a defined treshhold)
 # or we can make another function that removes based on quantile
@@ -97,8 +117,6 @@ def main():
     test_df = read_data("data/test.csv")
     train_df, test_df = make_same_numtype(train_df, test_df)
     drop_features_with_high_missing(train_df, 80)
-    NaN_df, features_with_missing = calculate_NaN(train_df, True)
-    print(features_with_missing)
     train_df = fill_with_NaNstring(train_df, get_categorical_features(train_df))
 
 
