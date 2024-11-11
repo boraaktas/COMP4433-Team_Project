@@ -1,4 +1,31 @@
-MSSubClass: Identifies the type of dwelling involved in the sale.	
+Target Column: SalePrice (Numerical)
+
+Feature Columns:  (79)
+    Numerical columns: (35)
+        LotFrontage, LotArea, OverallQual, OverallCond, YearBuilt,
+        YearRemodAdd, MasVnrArea, BsmtFinSF1, BsmtFinSF2, BsmtUnfSF,
+        TotalBsmtSF, 1stFlrSF, 2ndFlrSF, LowQualFinSF, GrLivArea,
+        BsmtFullBath, BsmtHalfBath, FullBath, HalfBath, BedroomAbvGr,
+        KitchenAbvGr, TotRmsAbvGrd, Fireplaces, GarageYrBlt,
+        GarageCars, GarageArea, WoodDeckSF, OpenPorchSF,
+        EnclosedPorch, 3SsnPorch, ScreenPorch, PoolArea, MiscVal, MoSold, YrSold
+
+
+    Categorical columns: (44)
+        MSSubClass, MSZoning, Street, Alley, LotShape, LandContour,
+        Utilities, LotConfig, LandSlope, Neighborhood, Condition1,
+        Condition2, BldgType, HouseStyle, RoofStyle, RoofMatl,
+        Exterior1st, Exterior2nd, MasVnrType, ExterQual, ExterCond,
+        Foundation, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1,
+        BsmtFinType2, Heating, HeatingQC, CentralAir, Electrical,
+        KitchenQual, Functional, FireplaceQu, GarageType,
+        GarageFinish, GarageQual, GarageCond, PavedDrive, PoolQC,
+        Fence, MiscFeature, SaleType, SaleCondition
+
+
+COLUMN DESCRIPTIONS:
+
+MSSubClass: Identifies the type of dwelling involved in the sale.
 
         20	1-STORY 1946 & NEWER ALL STYLES
         30	1-STORY 1945 & OLDER
@@ -59,18 +86,18 @@ LandContour: Flatness of the property
 		
 Utilities: Type of utilities available
 		
-       AllPub	All public Utilities (E,G,W,& S)	
+       AllPub	All public Utilities (E,G,W,& S)
        NoSewr	Electricity, Gas, and Water (Septic Tank)
        NoSeWa	Electricity and Gas Only
-       ELO	Electricity only	
+       ELO	    Electricity only
 	
 LotConfig: Lot configuration
 
        Inside	Inside lot
        Corner	Corner lot
        CulDSac	Cul-de-sac
-       FR2	Frontage on 2 sides of property
-       FR3	Frontage on 3 sides of property
+       FR2	    Frontage on 2 sides of property
+       FR3	    Frontage on 3 sides of property
 	
 LandSlope: Slope of property
 		
@@ -110,13 +137,13 @@ Condition1: Proximity to various conditions
 	
        Artery	Adjacent to arterial street
        Feedr	Adjacent to feeder street	
-       Norm	Normal	
-       RRNn	Within 200' of North-South Railroad
-       RRAn	Adjacent to North-South Railroad
-       PosN	Near positive off-site feature--park, greenbelt, etc.
-       PosA	Adjacent to postive off-site feature
-       RRNe	Within 200' of East-West Railroad
-       RRAe	Adjacent to East-West Railroad
+       Norm	    Normal
+       RRNn	    Within 200' of North-South Railroad
+       RRAn	    Adjacent to North-South Railroad
+       PosN	    Near positive off-site feature--park, greenbelt, etc.
+       PosA	    Adjacent to postive off-site feature
+       RRNe	    Within 200' of East-West Railroad
+       RRAe	    Adjacent to East-West Railroad
 	
 Condition2: Proximity to various conditions (if more than one is present)
 		
@@ -244,7 +271,7 @@ MasVnrType: Masonry veneer type
        BrkCmn	Brick Common
        BrkFace	Brick Face
        CBlock	Cinder Block
-       None	None
+       None	    None
        Stone	Stone
 	
 MasVnrArea: Masonry veneer area in square feet
@@ -296,7 +323,7 @@ BsmtExposure: Refers to walkout or garden level walls
 
        Gd	Good Exposure
        Av	Average Exposure (split levels or foyers typically score average or above)	
-       Mn	Mimimum Exposure
+       Mn	Minimum Exposure
        No	No Exposure
        NA	No Basement
 	
@@ -307,7 +334,7 @@ BsmtFinType1: Rating of basement finished area
        BLQ	Below Average Living Quarters	
        Rec	Average Rec Room
        LwQ	Low Quality
-       Unf	Unfinshed
+       Unf	Unfinished
        NA	No Basement
 		
 BsmtFinSF1: Type 1 finished square feet
@@ -319,7 +346,7 @@ BsmtFinType2: Rating of basement finished area (if multiple types)
        BLQ	Below Average Living Quarters	
        Rec	Average Rec Room
        LwQ	Low Quality
-       Unf	Unfinshed
+       Unf	Unfinished
        NA	No Basement
 
 BsmtFinSF2: Type 2 finished square feet
@@ -330,12 +357,12 @@ TotalBsmtSF: Total square feet of basement area
 
 Heating: Type of heating
 		
-       Floor	Floor Furnace
-       GasA	Gas forced warm air furnace
-       GasW	Gas hot water or steam heat
-       Grav	Gravity furnace	
-       OthW	Hot water or steam heat other than gas
-       Wall	Wall furnace
+       Floor    Floor Furnace
+       GasA	    Gas forced warm air furnace
+       GasW	    Gas hot water or steam heat
+       Grav	    Gravity furnace
+       OthW	    Hot water or steam heat other than gas
+       Wall	    Wall furnace
 		
 HeatingQC: Heating quality and condition
 
@@ -356,7 +383,7 @@ Electrical: Electrical system
        FuseA	Fuse Box over 60 AMP and all Romex wiring (Average)	
        FuseF	60 AMP Fuse Box and mostly Romex wiring (Fair)
        FuseP	60 AMP Fuse Box and mostly knob & tube wiring (poor)
-       Mix	Mixed
+       Mix	    Mixed
 		
 1stFlrSF: First Floor square feet
  
@@ -481,9 +508,9 @@ Fence: Fence quality
 		
        GdPrv	Good Privacy
        MnPrv	Minimum Privacy
-       GdWo	Good Wood
-       MnWw	Minimum Wood/Wire
-       NA	No Fence
+       GdWo	    Good Wood
+       MnWw	    Minimum Wood/Wire
+       NA	    No Fence
 	
 MiscFeature: Miscellaneous feature not covered in other categories
 		
@@ -502,16 +529,16 @@ YrSold: Year Sold (YYYY)
 
 SaleType: Type of sale
 		
-       WD 	Warranty Deed - Conventional
-       CWD	Warranty Deed - Cash
-       VWD	Warranty Deed - VA Loan
-       New	Home just constructed and sold
-       COD	Court Officer Deed/Estate
-       Con	Contract 15% Down payment regular terms
+       WD 	    Warranty Deed - Conventional
+       CWD	    Warranty Deed - Cash
+       VWD	    Warranty Deed - VA Loan
+       New	    Home just constructed and sold
+       COD	    Court Officer Deed/Estate
+       Con	    Contract 15% Down payment regular terms
        ConLw	Contract Low Down payment and low interest
        ConLI	Contract Low Interest
        ConLD	Contract Low Down
-       Oth	Other
+       Oth	    Other
 		
 SaleCondition: Condition of sale
 
