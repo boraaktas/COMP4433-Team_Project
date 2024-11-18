@@ -445,7 +445,7 @@ GarageType: Garage location
        BuiltIn	Built-In (Garage part of house - typically has room above garage)
        CarPort	Car Port
        Detchd	Detached from home
-       NA	No Garage
+       NA	    No Garage
 		
 GarageYrBlt: Year garage was built
 		
